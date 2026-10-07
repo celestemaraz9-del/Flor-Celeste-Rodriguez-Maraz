@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flor Celeste Rodríguez Maraz | Arte & Diseño Gráfico</title>
+
+  <!-- Fonts: Syne (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#fcfbf9',
+              surface: '#f3f0eb',
+              dark: '#121212',
+              cardDark: '#1c1c1e',
+              accent: '#e05a47',
+              accentHover: '#c84836',
+              text: '#1a1a1a',
+              muted: '#666666',
+              border: '#e2ded8'
+            }
+          },
+          fontFamily: {
+            heading: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #fcfbf9;
+      color: #1a1a1a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-header {
+      background-color: rgba(252, 251, 249, 0.88);
+      backdrop-filter: blur(12px);
+    }
+    .card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      border-color: #e05a47;
+    }
+    .accent-btn {
+      transition: all 0.25s ease;
+    }
+    .accent-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(224, 90, 71, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-text antialiased">
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-header border-b border-brand-border/60">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#inicio" class="font-heading font-extrabold text-lg uppercase tracking-tight text-brand-text">
+        Flor Celeste Rodríguez Maraz
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#inicio" class="hover:text-brand-accent transition-colors">Inicio</a>
+        <a href="#sobre-mi" class="hover:text-brand-accent transition-colors">Sobre mí</a>
+        <a href="#servicios" class="hover:text-brand-accent transition-colors">Servicios</a>
+        <a href="#portafolio" class="hover:text-brand-accent transition-colors">Portafolio</a>
+        <a href="#contacto" class="hover:text-brand-accent transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menu-btn" class="md:hidden p-2 text-brand-text focus:outline-none" aria-label="Abrir menú">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-b border-brand-border px-6 py-6 flex flex-col gap-4 text-center font-medium shadow-xl">
+      <a href="#inicio" class="mobile-link py-2 border-b border-brand-border/40">Inicio</a>
+      <a href="#sobre-mi" class="mobile-link py-2 border-b border-brand-border/40">Sobre mí</a>
+      <a href="#servicios" class="mobile-link py-2 border-b border-brand-border/40">Servicios</a>
+      <a href="#portafolio" class="mobile-link py-2 border-b border-brand-border/40">Portafolio</a>
+      <a href="#contacto" class="mobile-link py-2">Contacto</a>
+    </div>
+  </header>
+
+  <!-- 1. INICIO (HERO) -->
+  <section id="inicio" class="pt-36 pb-20 md:pt-44 md:pb-28">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <span class="inline-block text-xs uppercase tracking-widest font-bold text-brand-accent bg-brand-surface px-4 py-1.5 rounded-full border border-brand-border">
+          Arte & Diseño Gráfico
+        </span>
+        <h1 class="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-brand-text leading-tight">
+          Flor Celeste Rodríguez Maraz
+        </h1>
+        <p class="font-heading text-xl sm:text-2xl italic text-brand-muted font-medium">
+          “Ideas que toman forma, diseños que cuentan historias.”
+        </p>
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed max-w-2xl">
+          Soy estudiante de Arte y Diseño Gráfico y me interesa transformar ideas en propuestas visuales llamativas, conceptuales y con personalidad. Exploro diferentes áreas del diseño para crear piezas que no solo comuniquen, sino que también generen una experiencia.
+        </p>
+
+        <!-- Especialidades -->
+        <div class="pt-2">
+          <p class="text-xs uppercase tracking-wider font-semibold text-brand-muted mb-3">Especialidades principales</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-brand-surface px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text border border-brand-border">Fotografía</span>
+            <span class="bg-brand-surface px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text border border-brand-border">Diseño de marcas</span>
+            <span class="bg-brand-surface px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text border border-brand-border">Diseño de packaging</span>
+            <span class="bg-brand-surface px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text border border-brand-border">Diseño de carteles</span>
+            <span class="bg-brand-surface px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text border border-brand-border">Mockups y aplicaciones visuales</span>
+          </div>
+        </div>
+
+        <!-- Botones principales -->
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a href="#portafolio" class="accent-btn inline-flex items-center gap-2 bg-brand-text text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-brand-accent transition-all">
+            VER PORTAFOLIO <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#sobre-mi" class="inline-flex items-center gap-2 border-2 border-brand-text text-brand-text px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-brand-text hover:text-white transition-all">
+            CONOCERME
+          </a>
+        </div>
+      </div>
+
+      <!-- Banner Ilustrativo Gráfico -->
+      <div class="lg:col-span-5">
+        <div class="relative bg-gradient-to-br from-brand-surface to-brand-border/40 rounded-3xl p-8 border border-brand-border aspect-[4/5] flex flex-col justify-between overflow-hidden shadow-sm">
+          <div class="flex justify-between items-start">
+            <span class="font-heading font-extrabold text-5xl text-brand-text/10">01</span>
+            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-accent shadow-sm">
+              <i data-lucide="palette" class="w-6 h-6"></i>
+            </div>
+          </div>
+          <div class="space-y-3 z-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Identidad Editorial</span>
+            <h3 class="font-heading text-2xl font-bold text-brand-text">Composición Visual & Concepto</h3>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              Exploración de forma, color y tipografía orientada a conectar marcas e historias con su audiencia.
+            </p>
+          </div>
+          <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-brand-accent/10 rounded-full blur-2xl pointer-events-none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ACERCA DE MÍ -->
+  <section id="sobre-mi" class="py-20 bg-white border-y border-brand-border/60">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-text mb-6">Sobre mí</h2>
+        <div class="space-y-4 text-brand-text/90 text-base sm:text-lg leading-relaxed">
+          <p>
+            Soy Flor Celeste Rodríguez Maraz, estudiante de Arte y Diseño Gráfico en la Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuquisaca. Mi interés por el diseño comenzó desde tercero de secundaria y desde entonces he encontrado en él una forma de transformar ideas en propuestas visuales.
+          </p>
+          <p>
+            Me interesa crear diseños llamativos que conecten con el público y que no solo comuniquen la esencia de una marca, sino que también transmitan una experiencia. Disfruto especialmente explorar la ilustración, la creación de conceptos, el diseño de marcas, packaging, carteles y la manera en que una propuesta gráfica puede cobrar vida mediante diferentes aplicaciones y mockups.
+          </p>
+          <p>
+            Me considero una diseñadora creativa, detallista y curiosa. Me gusta experimentar con diferentes recursos y buscar nuevas maneras de convertir una idea en una propuesta visual con personalidad.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-6">
+        <!-- Fortalezas -->
+        <div>
+          <h3 class="font-heading text-xl font-bold text-brand-text mb-6 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-5 h-5 text-brand-accent"></i> MIS FORTALEZAS
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="bg-brand-surface p-4 rounded-2xl border border-brand-border flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-accent shrink-0"></i>
+              <span class="font-semibold text-sm text-brand-text">Creatividad</span>
+            </div>
+            <div class="bg-brand-surface p-4 rounded-2xl border border-brand-border flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-accent shrink-0"></i>
+              <span class="font-semibold text-sm text-brand-text">Ilustración</span>
+            </div>
+            <div class="bg-brand-surface p-4 rounded-2xl border border-brand-border flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-accent shrink-0"></i>
+              <span class="font-semibold text-sm text-brand-text">Conceptualización</span>
+            </div>
+            <div class="bg-brand-surface p-4 rounded-2xl border border-brand-border flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-accent shrink-0"></i>
+              <span class="font-semibold text-sm text-brand-text">Experimentación</span>
+            </div>
+            <div class="bg-brand-surface p-4 rounded-2xl border border-brand-border flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-accent shrink-0"></i>
+              <span class="font-semibold text-sm text-brand-text">Atención al detalle</span>
+            </div>
+            <div class="bg-brand-surface p-4 rounded-2xl border border-brand-border flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-accent shrink-0"></i>
+              <span class="font-semibold text-sm text-brand-text">Desarrollo de ideas visuales</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div>
+          <h3 class="font-heading text-xl font-bold text-brand-text mb-6 flex items-center gap-2">
+            <i data-lucide="wrench" class="w-5 h-5 text-brand-accent"></i> HERRAMIENTAS
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="bg-brand-bg p-4 rounded-2xl border border-brand-border text-center card-hover">
+              <div class="w-10 h-10 mx-auto mb-2 bg-brand-surface rounded-xl flex items-center justify-center text-brand-text">
+                <i data-lucide="pen-tool" class="w-5 h-5"></i>
+              </div>
+              <span class="font-semibold text-xs text-brand-text block">Adobe Illustrator</span>
+            </div>
+            <div class="bg-brand-bg p-4 rounded-2xl border border-brand-border text-center card-hover">
+              <div class="w-10 h-10 mx-auto mb-2 bg-brand-surface rounded-xl flex items-center justify-center text-brand-text">
+                <i data-lucide="image" class="w-5 h-5"></i>
+              </div>
+              <span class="font-semibold text-xs text-brand-text block">Adobe Photoshop</span>
+            </div>
+            <div class="bg-brand-bg p-4 rounded-2xl border border-brand-border text-center card-hover">
+              <div class="w-10 h-10 mx-auto mb-2 bg-brand-surface rounded-xl flex items-center justify-center text-brand-text">
+                <i data-lucide="layout" class="w-5 h-5"></i>
+              </div>
+              <span class="font-semibold text-xs text-brand-text block">Canva</span>
+            </div>
+            <div class="bg-brand-bg p-4 rounded-2xl border border-brand-border text-center card-hover">
+              <div class="w-10 h-10 mx-auto mb-2 bg-brand-surface rounded-xl flex items-center justify-center text-brand-text">
+                <i data-lucide="brush" class="w-5 h-5"></i>
+              </div>
+              <span class="font-semibold text-xs text-brand-text block">IbisPaint</span>
+            </div>
+            <div class="bg-brand-bg p-4 rounded-2xl border border-brand-border text-center card-hover">
+              <div class="w-10 h-10 mx-auto mb-2 bg-brand-surface rounded-xl flex items-center justify-center text-brand-text">
+                <i data-lucide="video" class="w-5 h-5"></i>
+              </div>
+              <span class="font-semibold text-xs text-brand-text block">CapCut</span>
+            </div>
+            <div class="bg-brand-bg p-4 rounded-2xl border border-brand-border text-center card-hover">
+              <div class="w-10 h-10 mx-auto mb-2 bg-brand-surface rounded-xl flex items-center justify-center text-brand-text">
+                <i data-lucide="box" class="w-5 h-5"></i>
+              </div>
+              <span class="font-semibold text-xs text-brand-text block">Blender</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SERVICIOS -->
+  <section id="servicios" class="py-20 bg-brand-surface">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-14">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-text mb-3">Servicios</h2>
+        <p class="text-brand-muted text-base">
+          Transformo ideas en propuestas visuales pensadas para comunicar, destacar y generar una experiencia.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Servicio 1 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-border flex flex-col justify-between card-hover">
+          <div>
+            <h3 class="font-heading text-xl font-bold text-brand-text mb-3">DISEÑO DE MARCAS</h3>
+            <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+              Creación de identidades visuales y propuestas gráficas que buscan representar la personalidad y esencia de una marca.
+            </p>
+            <ul class="space-y-2 mb-8 text-xs font-medium text-brand-text">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Diseño de logotipo</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Identidad visual básica</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Aplicaciones de marca</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-brand-border flex justify-between items-center">
+            <span class="text-xs uppercase font-bold text-brand-muted">Precio</span>
+            <span class="font-heading font-bold text-lg text-brand-accent">desde Bs. 250</span>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-border flex flex-col justify-between card-hover">
+          <div>
+            <h3 class="font-heading text-xl font-bold text-brand-text mb-3">DISEÑO DE PACKAGING</h3>
+            <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+              Diseño de empaques que combinan concepto, comunicación visual y una presentación atractiva del producto.
+            </p>
+            <ul class="space-y-2 mb-8 text-xs font-medium text-brand-text">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Conceptualización</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Diseño gráfico del empaque</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Presentación mediante mockups</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-brand-border flex justify-between items-center">
+            <span class="text-xs uppercase font-bold text-brand-muted">Precio</span>
+            <span class="font-heading font-bold text-lg text-brand-accent">desde Bs. 200</span>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-border flex flex-col justify-between card-hover">
+          <div>
+            <h3 class="font-heading text-xl font-bold text-brand-text mb-3">DISEÑO DE CARTELES</h3>
+            <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+              Diseño de piezas gráficas llamativas para comunicar campañas, eventos, productos o mensajes.
+            </p>
+            <ul class="space-y-2 mb-8 text-xs font-medium text-brand-text">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Carteles publicitarios</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Carteles para campañas</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Banners</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-brand-border flex justify-between items-center">
+            <span class="text-xs uppercase font-bold text-brand-muted">Precio</span>
+            <span class="font-heading font-bold text-lg text-brand-accent">desde Bs. 80</span>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-border flex flex-col justify-between card-hover">
+          <div>
+            <h3 class="font-heading text-xl font-bold text-brand-text mb-3">FOTOGRAFÍA</h3>
+            <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+              Creación de imágenes pensadas para comunicar visualmente productos, conceptos o proyectos.
+            </p>
+            <ul class="space-y-2 mb-8 text-xs font-medium text-brand-text">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Fotografía de producto</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Fotografía creativa</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Edición básica</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-brand-border flex justify-between items-center">
+            <span class="text-xs uppercase font-bold text-brand-muted">Precio</span>
+            <span class="font-heading font-bold text-lg text-brand-accent">desde Bs. 100</span>
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="bg-white p-8 rounded-3xl border border-brand-border flex flex-col justify-between card-hover md:col-span-2 lg:col-span-1">
+          <div>
+            <h3 class="font-heading text-xl font-bold text-brand-text mb-3">MOCKUPS Y APLICACIONES VISUALES</h3>
+            <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+              Presentación de propuestas gráficas aplicadas a diferentes soportes y productos para visualizar cómo funcionarían en un contexto real.
+            </p>
+            <ul class="space-y-2 mb-8 text-xs font-medium text-brand-text">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Aplicación de diseños</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Presentación de productos</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Mockups para proyectos</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-brand-border flex justify-between items-center">
+            <span class="text-xs uppercase font-bold text-brand-muted">Precio</span>
+            <span class="font-heading font-bold text-lg text-brand-accent">desde Bs. 60</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-brand-muted italic mt-10">
+        “Los precios son referenciales y pueden variar según las características y necesidades de cada proyecto.”
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. PORTAFOLIO -->
+  <section id="portafolio" class="py-20 bg-brand-bg">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-14">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-text mb-3">Mi portafolio</h2>
+        <p class="text-brand-muted text-base">
+          Una selección de proyectos en los que exploro diferentes formas de comunicar ideas a través del diseño.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        <!-- PROYECTO 01 -->
+        <article class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Proyecto 01</span>
+              <h3 class="font-heading text-2xl font-bold text-brand-text">CRAK</h3>
+            </div>
+            <button onclick="openModal('CRAK', 'https://www.behance.net/gallery/256752905/Crak')" class="text-xs font-semibold text-brand-muted hover:text-brand-accent transition-colors flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i> Vista ampliada
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Imagen principal</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Segunda imagen</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Tercera imagen</span>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="https://www.behance.net/gallery/256752905/Crak" target="_blank" rel="noopener noreferrer" class="accent-btn inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-3 rounded-full font-semibold text-xs tracking-wider uppercase">
+              VER PROYECTO EN BEHANCE <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 02 -->
+        <article class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Proyecto 02</span>
+              <h3 class="font-heading text-2xl font-bold text-brand-text">TE EXTRAÑO</h3>
+            </div>
+            <button onclick="openModal('TE EXTRAÑO', 'https://www.behance.net/gallery/256753041/Te-extrano')" class="text-xs font-semibold text-brand-muted hover:text-brand-accent transition-colors flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i> Vista ampliada
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Imagen principal</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Segunda imagen</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Tercera imagen</span>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="https://www.behance.net/gallery/256753041/Te-extrano" target="_blank" rel="noopener noreferrer" class="accent-btn inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-3 rounded-full font-semibold text-xs tracking-wider uppercase">
+              VER PROYECTO EN BEHANCE <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 03 -->
+        <article class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Proyecto 03</span>
+              <h3 class="font-heading text-2xl font-bold text-brand-text">HANNA</h3>
+            </div>
+            <button onclick="openModal('HANNA', 'https://www.behance.net/gallery/256753231/Hanna')" class="text-xs font-semibold text-brand-muted hover:text-brand-accent transition-colors flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i> Vista ampliada
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Imagen principal</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Segunda imagen</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Tercera imagen</span>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="https://www.behance.net/gallery/256753231/Hanna" target="_blank" rel="noopener noreferrer" class="accent-btn inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-3 rounded-full font-semibold text-xs tracking-wider uppercase">
+              VER PROYECTO EN BEHANCE <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 04 -->
+        <article class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Proyecto 04</span>
+              <h3 class="font-heading text-2xl font-bold text-brand-text">ASARPROCH</h3>
+            </div>
+            <button onclick="openModal('ASARPROCH', 'https://www.behance.net/gallery/256753533/ASARPROCH')" class="text-xs font-semibold text-brand-muted hover:text-brand-accent transition-colors flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i> Vista ampliada
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Imagen principal</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Segunda imagen</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Tercera imagen</span>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="https://www.behance.net/gallery/256753533/ASARPROCH" target="_blank" rel="noopener noreferrer" class="accent-btn inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-3 rounded-full font-semibold text-xs tracking-wider uppercase">
+              VER PROYECTO EN BEHANCE <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 05 -->
+        <article class="bg-white p-6 sm:p-8 rounded-3xl border border-brand-border">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Proyecto 05</span>
+              <h3 class="font-heading text-2xl font-bold text-brand-text">UN ÚLTIMO ADIÓS</h3>
+            </div>
+            <button onclick="openModal('UN ÚLTIMO ADIÓS', 'https://www.behance.net/gallery/256753725/Un-Ultimo-Adios')" class="text-xs font-semibold text-brand-muted hover:text-brand-accent transition-colors flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i> Vista ampliada
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Imagen principal</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Segunda imagen</span>
+            </div>
+            <div class="bg-brand-surface border border-brand-border/80 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-6 text-center text-brand-muted">
+              <i data-lucide="image" class="w-8 h-8 mb-2 opacity-40"></i>
+              <span class="text-xs font-medium">Tercera imagen</span>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <a href="https://www.behance.net/gallery/256753725/Un-Ultimo-Adios" target="_blank" rel="noopener noreferrer" class="accent-btn inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-3 rounded-full font-semibold text-xs tracking-wider uppercase">
+              VER PROYECTO EN BEHANCE <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CONTACTO -->
+  <section id="contacto" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-brand-dark text-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl">
+        <div class="max-w-2xl mb-12">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">¿Trabajamos juntos?</h2>
+          <p class="text-gray-400 text-base">
+            Si tienes una idea, proyecto o propuesta que quieras convertir en una experiencia visual, puedes ponerte en contacto conmigo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Informacion de contacto -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-accent shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-gray-400 block">Correo</span>
+                <a href="mailto:celestemaraz9@gmail.com" class="font-semibold text-sm hover:text-brand-accent transition-colors">
+                  celestemaraz9@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-accent shrink-0">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-gray-400 block">Instagram</span>
+                <a href="https://instagram.com/hanna.18.flor" target="_blank" class="font-semibold text-sm hover:text-brand-accent transition-colors">
+                  @hanna.18.flor
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-accent shrink-0">
+                <i data-lucide="globe" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-gray-400 block">Behance</span>
+                <a href="https://www.behance.net/florrodriguez30" target="_blank" class="font-semibold text-sm hover:text-brand-accent transition-colors">
+                  florrodriguez30
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand-accent shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-gray-400 block">WhatsApp</span>
+                <a href="https://wa.me/59169199095" target="_blank" class="font-semibold text-sm hover:text-brand-accent transition-colors">
+                  +591 69199095
+                </a>
+              </div>
+            </div>
+
+            <!-- Botones de Accion Directa -->
+            <div class="pt-4 flex flex-wrap gap-2">
+              <a href="https://wa.me/59169199095" target="_blank" class="accent-btn bg-brand-accent text-white px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i> ESCRIBIR POR WHATSAPP
+              </a>
+              <a href="mailto:celestemaraz9@gmail.com" class="border border-white/20 text-white hover:bg-white/10 px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-2 transition-all">
+                ENVIAR CORREO
+              </a>
+              <a href="https://www.behance.net/florrodriguez30" target="_blank" class="border border-white/20 text-white hover:bg-white/10 px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-2 transition-all">
+                VER BEHANCE
+              </a>
+              <a href="https://instagram.com/hanna.18.flor" target="_blank" class="border border-white/20 text-white hover:bg-white/10 px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-2 transition-all">
+                INSTAGRAM
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="lg:col-span-7 bg-white/5 border border-white/10 p-6 sm:p-8 rounded-3xl">
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="form-name" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Nombre</label>
+                <input type="text" id="form-name" required placeholder="Tu nombre" class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent">
+              </div>
+
+              <div>
+                <label for="form-email" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Correo electrónico</label>
+                <input type="email" id="form-email" required placeholder="tu@correo.com" class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent">
+              </div>
+
+              <div>
+                <label for="form-type" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Tipo de proyecto</label>
+                <input type="text" id="form-type" placeholder="Diseño de marca, packaging, cartel..." class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent">
+              </div>
+
+              <div>
+                <label for="form-msg" class="block text-xs uppercase tracking-wider text-gray-400 mb-1">Mensaje</label>
+                <textarea id="form-msg" rows="4" required placeholder="Cuéntame sobre tu idea..." class="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-accent"></textarea>
+              </div>
+
+              <button type="submit" class="accent-btn w-full bg-brand-accent text-white py-3.5 rounded-xl text-xs uppercase font-bold tracking-wider">
+                Enviar Mensaje
+              </button>
+              
+              <div id="form-toast" class="hidden p-3 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 rounded-xl text-xs text-center">
+                ¡Gracias por tu mensaje! Me pondré en contacto contigo muy pronto.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="py-12 border-t border-brand-border bg-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <h4 class="font-heading font-extrabold text-brand-text text-base">Flor Celeste Rodríguez Maraz</h4>
+        <p class="text-xs text-brand-muted mt-0.5">Arte y Diseño Gráfico • Sucre, Bolivia</p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-xs font-semibold text-brand-muted">
+        <a href="https://instagram.com/hanna.18.flor" target="_blank" class="hover:text-brand-accent transition-colors">Instagram</a>
+        <a href="https://www.behance.net/florrodriguez30" target="_blank" class="hover:text-brand-accent transition-colors">Behance</a>
+        <a href="https://wa.me/59169199095" target="_blank" class="hover:text-brand-accent transition-colors">WhatsApp</a>
+        <a href="mailto:celestemaraz9@gmail.com" class="hover:text-brand-accent transition-colors">Correo</a>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-brand-border/40 text-center">
+      <p class="text-xs text-brand-muted">
+        © 2026 Flor Celeste Rodríguez Maraz. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MODAL CASE STUDY DE PROYECTOS -->
+  <div id="project-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+    <div class="bg-brand-bg max-w-3xl w-full rounded-3xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto border border-brand-border">
+      <button onclick="closeModal()" class="absolute top-6 right-6 p-2 text-brand-muted hover:text-brand-text" aria-label="Cerrar modal">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      
+      <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Detalles del Proyecto</span>
+      <h3 id="modal-title" class="font-heading text-3xl font-bold text-brand-text mb-6 mt-1"></h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div class="bg-brand-surface rounded-2xl aspect-[4/3] border border-brand-border flex items-center justify-center text-brand-muted text-xs font-medium">
+          Vista 01
+        </div>
+        <div class="bg-brand-surface rounded-2xl aspect-[4/3] border border-brand-border flex items-center justify-center text-brand-muted text-xs font-medium">
+          Vista 02
+        </div>
+        <div class="bg-brand-surface rounded-2xl aspect-[4/3] border border-brand-border flex items-center justify-center text-brand-muted text-xs font-medium">
+          Vista 03
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button onclick="closeModal()" class="px-5 py-2.5 rounded-full text-xs font-semibold border border-brand-border hover:bg-brand-surface transition-colors">Cerrar</button>
+        <a id="modal-behance-btn" href="#" target="_blank" rel="noopener noreferrer" class="accent-btn bg-brand-accent text-white px-6 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2">
+          ABRIR EN BEHANCE <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Inicializar Iconos Lucide
+    lucide.createIcons();
+
+    // Menu Hamburguesa Mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Modal para vista ampliada de proyectos
+    const modal = document.getElementById('project-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBehanceBtn = document.getElementById('modal-behance-btn');
+
+    function openModal(title, url) {
+      modalTitle.textContent = title;
+      modalBehanceBtn.href = url;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Formulario de Contacto Interactivo
+    const contactForm = document.getElementById('contact-form');
+    const formToast = document.getElementById('form-toast');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formToast.classList.remove('hidden');
+      contactForm.reset();
+      setTimeout(() => {
+        formToast.classList.add('hidden');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
